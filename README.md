@@ -31,3 +31,6 @@ BarberBook is a web application designed to streamline appointment management fo
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+![Screenshot 2024-04-21 231605](https://github.com/IvanovVasil02/BarberBook-Management-System/assets/115547201/62d1f80c-cc2d-4665-86bd-c53b233eeb2e)
+![Screenshot 2024-04-21 231735](https://github.com/IvanovVasil02/BarberBook-Management-System/assets/115547201/8fa40a11-f686-4edf-8ee6-d5053244c155)
+![Screenshot 2024-04-22 004211](https://github.com/IvanovVasil02/BarberBook-Management-System/assets/115547201/28801cf0-5df8-4778-97cc-31556b68a7e3)
