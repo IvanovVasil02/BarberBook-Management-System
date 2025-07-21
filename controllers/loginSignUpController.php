@@ -209,20 +209,10 @@ function adminAccess()
 {
     $result = verifyDataLogin();
 
-<<<<<<< HEAD
-
-    if ($result['success']) {
-        $res = verifyAdminLogin($result['email'], $result['password']);
-
-
-
-        if ($res['success'] && $res['admin']) {
-=======
     if ($result['success']) {
         $res = verifyAdminLogin($result['email'], $result['password']);
 
         if ($res['admin']) {
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
             $_SESSION['adminloggedin'] = 1;
             $_SESSION['email'] = $result['email'];
             $_SESSION['id'] = $res['data']['id'];
@@ -239,19 +229,14 @@ function verifyAdminLogin($email, $password)
 {
     $result = [
         'admin' => 1,
-<<<<<<< HEAD
         'msg' => 'Login successful',
         'data' => '',
         'success' => 1
-=======
-        'msg' => 'Login effetuato con successo',
-        'data' => ''
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
     ];
 
     try {
         $conn = dbConnect();
-        $sql = "SELECT * FROM utentiadmin WHERE email= :email";
+        $sql = "SELECT * FROM utenti_admin WHERE email= :email";
         $stm = $conn->prepare($sql);
         $res = $stm->execute([':email' => $email]);
 
@@ -260,7 +245,6 @@ function verifyAdminLogin($email, $password)
             $result['data'] = $row;
             if (!password_verify($password, $row['password'])) {
                 $result['success'] = 0;
-<<<<<<< HEAD
                 $result['admin'] = 0;
                 $result['msg'] = 'Data no fight';
             }
@@ -268,22 +252,12 @@ function verifyAdminLogin($email, $password)
             $result['success'] = 0;
             $result['admin'] = 0;
             $result['msg'] = 'Data no fight';
-=======
-                $result['msg'] = "I dati inseriti non combaciano.";
-            }
-        } else {
-            $result['success'] = 0;
-            $result['msg'] = ' dati inseriti non combaciano';
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
         }
 
         return $result;
     } catch (Exception $e) {
         $result['success'] = 0;
-<<<<<<< HEAD
         $result['admin'] = 0;
-=======
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
         $result['msg'] = $e->getMessage();
     }
 

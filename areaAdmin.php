@@ -65,15 +65,9 @@ $appointments = adminAppointments();
 
                     <?php if (AdminLoggedIn()) { ?>
 
-<<<<<<< HEAD
                         <form method="POST" id="adminFormLogout">
                             <input type="hidden" name="action" value="logout">
                             <button type="button" class="btn btn-outline-success" id="logoutAdmin">LogOut</button>
-=======
-                        <form method="POST" id="formLogout">
-                            <input type="hidden" name="action" value="logout">
-                            <button type="button" class="btn btn-outline-success" id="logout">LogOut</button>
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
                         </form>
                     <?php } ?>
 
@@ -204,10 +198,7 @@ $appointments = adminAppointments();
     <script src="js/jquery.js"></script>
 
     <?php
-<<<<<<< HEAD
     require 'views/signIn_login.php';
-=======
->>>>>>> BarberBook-A-Barber-Appointment-Management-System
     require 'views/calendario.php';
     require 'views/calendarioAdmin.php';
 

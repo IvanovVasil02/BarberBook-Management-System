@@ -48,6 +48,23 @@ CREATE TABLE `utenti` (
   `password` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `utenti_admin`
+--
+
+CREATE TABLE `utenti_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(64) NOT NULL,
+  `email` varchar(64) NOT NULL UNIQUE,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
 --
 -- Dump dei dati per la tabella `utenti`
 --

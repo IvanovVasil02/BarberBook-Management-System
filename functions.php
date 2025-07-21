@@ -1,65 +1,68 @@
-<?php 
-function isValidToken($token){
-    return $token === $_SESSION['csrf']; 
+<?php
+function isValidToken($token)
+{
+    return $token === $_SESSION['csrf'];
 }
 
-function isUserLoggedIn() {
+function isUserLoggedIn()
+{
     return $_SESSION['userloggedin'] ?? 0;
-} 
+}
 
-function AdminLoggedIn() {
+function AdminLoggedIn()
+{
     return $_SESSION['adminloggedin'] ?? 0;
 }
 
-function getUserEmail(){
+function getUserEmail()
+{
     return $_SESSION['email'] ?? '';
 }
 
-function getUserId() {
+function getUserId()
+{
     return $_SESSION['id'] ?? 0;
 }
 
 
-function getbookingTpl(array $appointment){
+function getbookingTpl(array $appointment)
+{
 
     $orario = $appointment['orario'];
     $datetime = new DateTime($orario);
     $orario =  $datetime->format('H:i');
-    
-    $htmlAppointment ='
-    <tr>
-        <td>'. $appointment['nome'] .'</td>
-        <td>'. date('d-m-Y', strtotime($appointment['data'])) .'</td>
-        <td>'. $orario .'</td>
-    </tr>';
 
-    return $htmlAppointment; 
-    
-}
-
-function getAllbookings(array $appointment){
-
-    $orario = $appointment['orario'];
-    $datetime = new DateTime($orario);
-    $orario =  $datetime->format('H:i');
-    
     $htmlAppointment = '
     <tr>
-        <td>'. $appointment['nome'] .'</th>
-        <td>'. $appointment['numero'] .'</th>
-        <td>'. date('d-m-Y', strtotime($appointment['data'])) .'</td>
-        <td>'. $orario .'</td>
+        <td>' . $appointment['nome'] . '</td>
+        <td>' . date('d-m-Y', strtotime($appointment['data'])) . '</td>
+        <td>' . $orario . '</td>
     </tr>';
 
-    return $htmlAppointment; 
+    return $htmlAppointment;
+}
+
+function getAllbookings(array $appointment)
+{
+
+    $orario = $appointment['orario'];
+    $datetime = new DateTime($orario);
+    $orario =  $datetime->format('H:i');
+
+    $htmlAppointment = '
     
+        <td>' . $appointment['nome'] . '</th>
+        <td>' . $appointment['numero'] . '</th>
+        <td>' . date('d-m-Y', strtotime($appointment['data'])) . '</td>
+        <td>' . $orario . '</td>';
+
+    return $htmlAppointment;
 }
 
-function getTimeBtnTpl(array $timeClass){
+function getTimeBtnTpl(array $timeClass)
+{
 
-    $btnClass = $timeClass['class']?'danger':'primary';
+    $btnClass = $timeClass['class'] ? 'danger' : 'primary';
 
-    return $btnClass; 
+    return $btnClass;
 }
-
-?>
