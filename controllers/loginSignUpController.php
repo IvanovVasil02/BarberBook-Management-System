@@ -60,9 +60,6 @@ function verifyDataLogin()
         'msg' => ''
     ];
 
-
-
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
